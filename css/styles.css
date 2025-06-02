@@ -1,0 +1,167 @@
+:root {
+    --color-primary: #00A9B5;
+    --color-secondary: #FFB930;
+    --color-accent: #FF5757;
+    --color-background: #F7F9FA;
+    --color-text: #2C3E50;
+    --spacing-unit: 1rem;
+    --border-radius: 8px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* Typography */
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Layout */
+.main-header {
+    background-color: var(--color-primary);
+    padding: var(--spacing-unit);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-secondary);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem var(--spacing-unit);
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://source.unsplash.com/1600x900/?beach') center/cover;
+    color: white;
+}
+
+/* Buttons */
+.cta-button, .submit-button {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-button:hover, .submit-button:hover {
+    background-color: #e64242;
+    transform: translateY(-2px);
+}
+
+/* Map Section */
+.map-section {
+    padding: 2rem var(--spacing-unit);
+}
+
+.map-container {
+    height: 400px;
+    background-color: #e0e0e0;
+    border-radius: var(--border-radius);
+    margin: var(--spacing-unit) 0;
+}
+
+/* Weather Section */
+.weather-section {
+    padding: 2rem var(--spacing-unit);
+    background-color: white;
+}
+
+.weather-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-unit);
+}
+
+/* Join Section */
+.join-section {
+    padding: 4rem var(--spacing-unit);
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.signup-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-unit);
+}
+
+.signup-form input {
+    padding: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-unit);
+    background-color: var(--color-text);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 2rem var(--spacing-unit);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero, .map-section, .weather-section, .join-section {
+    animation: fadeIn 1s ease-out;
+}
